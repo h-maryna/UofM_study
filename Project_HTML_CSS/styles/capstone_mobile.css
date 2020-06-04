@@ -1,0 +1,479 @@
+/* Mobile styles for devices under 768 */
+body{
+  font-family: 'Montserrat', Arial, sans-serif; 
+  font-size: 16px;
+  color: #000;
+  background-color: #fff;
+  margin: 0;
+}
+#wrapper{  /*CSS style for mobile wrapper */
+  width: 100%;
+  background-color: #fff;
+  margin: 0 auto; 
+  position: relative;
+}
+header{
+  background-color: #f96;
+  background: linear-gradient(#fc9,#f30);
+  height: 55px;
+  position: relative;
+  opacity: 0.9;
+  box-shadow: 0px 3px 8px rgba(0,0,0,0.8);
+  z-index: 10000;
+  top: 0;
+  border-radius: 10px;
+}
+/*CSS style for main logo */
+div #main_logo{
+  width: 175px;
+  height: 39px;
+  left: 43px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  background-image: url('../images/logo_mobile.png');
+  background-repeat: no-repeat;
+  position: absolute;
+  z-index: 5;
+}
+/*CSS style for facebook and instagram icons in  a header area */
+div #facebook{
+  background-image: url(../images/fb_icon.svg);
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  right: 10px;
+  margin-top: 8px;
+}
+div #instagram{
+  background-image: url(../images/insta_icon.svg);
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  right: 55px;
+  margin-top: 8px;
+}
+/* Styles for mobile " hamburger menu" navigation */    
+nav{
+  perspective: 1000px;
+  perspective-origin: 100% 100%;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+}
+nav a#menubutton{  /*CSS style for menubutton */
+  position: fixed;
+  top: 8px;
+  left: 15px;
+  z-index: 10100;
+  display: block;
+  width: 32px;
+  height: 35px;
+  border: 1px solid #630;
+  background-color: #f96;
+  border-radius: 4px;
+  box-shadow: 0px 2px 6px rgba(0,0,0,0.45);
+}
+/* CSS for menu lines */
+nav a#menubutton span{
+  display: block;
+  height: 3px;
+  background-color: #f63;;
+  margin-bottom: 5px;
+  margin-top: 6px;
+  margin-left: 5px;
+  margin-right: 5px;
+}
+/* Rules for main nav list*/
+nav ul#navlist{  /*CSS style for navigation list */
+  transform: rotateX(90deg);
+  opacity: 0;
+  position: fixed;
+  top: 40px;
+  left: 5px;
+  z-index: 10050;
+  border: 1px solid #630;
+  background-color: #fc9;
+  box-shadow: 0px 2px 6px rgba(0,0,0,0.55);
+  transition: all ease-in-out 0.3s;
+}
+
+nav #navlist,
+nav #navlist li ul{
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+nav ul#navlist li{
+  border: 1px solid #630;
+}
+nav ul#navlist li a{
+  text-decoration: none;
+  color: #fff;
+  text-shadow: 1px 3px 5px rgba(0,0,0,0.75);
+  display: block;
+  padding: 5px 4px 5px 6px; 
+  font-size: 16px;
+  background-color: #f96;
+  background: linear-gradient(#fc9,#f30);
+}
+/* Show the menu when hoverer over <nav> */
+nav:hover ul#navlist{
+  transform: rotateX(0deg);
+  opacity: 1;
+}
+main{
+  display: block;
+  background-color: #fff;
+  line-height: 1.6em;
+  min-height: 500px;
+  text-align: left; 
+  z-index: 10;
+  margin: 0 auto;
+  position: relative;
+}
+main p{
+  margin-left: 5px;
+}
+div #outside, #inside{  /*CSS style for hiding images from desktop */
+  display: none;
+}
+div #mobile_img{  /*CSS style for mobile image */
+  background-image: url(../images/mobile_image.jpg);
+  margin-top: 10px;
+  opacity: 0.85;
+  border-radius: 10px;
+  width: 100%;
+  height: auto; 
+  margin-bottom: 10px;
+}
+h1{
+  text-align: left;
+  font-size: 22px;
+  font-weight: 700;
+  margin-top: 17px;
+}
+h2{
+  font-size: 20px;
+  font-style: italic;
+  font-weight: 700;
+  margin-left: 5px;
+} 
+/* CSS style for call for action */
+div #cta{  /*CSS style for call to action*/
+  float: right;
+  width: 195px;
+  height: 80px;
+  right: 3px;
+  padding-bottom: 8px;
+  padding-right: 0;
+  background-color: #fff;
+  color: #f00;
+  font-family: 'PT Sans', sans-serif;
+  font-weight: 700;
+  font-size: 20px;
+  text-align: center;
+  box-shadow: 0px 7px 10px rgba(50,0,0,0.75);
+  border-radius: 15px;
+  position: relative;
+}
+div #cta:hover{  /*CSS style for call to action when mouse is over */
+  background-color: #f93;
+}
+.shaking:hover {  /*CSS style for making call to action to shake */
+  animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) both;
+  transform: translate3d(0, 0, 0);
+  backface-visibility: hidden;
+  perspective: 1000px;
+}
+
+@-webkit-keyframes shake {
+  10%, 90% {
+           transform: translate3d(-1px, 0, 0);
+  }
+  20%, 80% {
+           transform: translate3d(2px, 0, 0);
+}
+
+  30%, 50%, 70% {
+                transform: translate3d(-4px, 0, 0);
+}
+
+  40%, 60% {
+            transform: translate3d(4px, 0, 0);
+}
+}
+@keyframes shake {
+  10%, 90% {
+           transform: translate3d(-1px, 0, 0);
+  }
+  20%, 80% {
+           transform: translate3d(2px, 0, 0);
+}
+
+  30%, 50%, 70% {
+                transform: translate3d(-4px, 0, 0);
+}
+
+  40%, 60% {
+            transform: translate3d(4px, 0, 0);
+}
+}
+iframe{  /*CSS style for google maps link */
+  border-radius: 15px;
+  margin-bottom: 2px;
+  width: 160px;
+  height: 120px;
+  position: absolute;
+  margin-top: 5px;
+  right: 3px;
+}
+/* CSS for footer area */
+footer{
+  min-height: 100px;
+  background-color: #fff;
+  background: linear-gradient(#fc9,#f30);
+  border-radius: 15px;
+  position: relative;
+  margin-top: 15px;
+}
+/* CSS for company address in a footer area */
+footer div#address address{
+  position: absolute;
+  text-align: right;
+  font-style: italic;
+  font-size: 12px;
+  right: 10px;
+  top: 10px;
+  line-height: 1em;
+  text-shadow: 0px 1px 3px rgba(0,0,0,0.5);
+  z-index: 10;
+}
+footer div#main_logo_footer{  /*CSS style for logo in a footer area */
+  background-image: url(../images/logo_mobile.png);
+  background-repeat: no-repeat;
+  position: absolute;
+  width: 175px;
+  height: 39px;
+  padding: 5px; 
+  padding-top: 10px;
+}
+/* CSS for styling copyright info */
+footer p.copy{
+  font-size: 12px;
+  text-align: center;
+  padding-top: 80px;
+}
+/* ----- Css for Home Page ends ----- */
+
+/* ----- Css for About Page starts ----- */
+#hello_img img{  /*CSS style for main images im About Page */
+  width: 50%;
+  height: auto;
+  opacity: 0.85;
+  border-radius: 15px;
+}
+#machine img{
+  width: 50%;
+  height: auto;
+  opacity: 0.85;
+  border-radius: 15px;
+}
+#example1 img{
+  background-image: url(../images/coffee_heart.jpg);
+  background-repeat: no-repeat;
+  width: 50%;
+  height: auto;
+  opacity: 0.85;
+  border-radius: 15px;
+}
+a.go_top{
+  color: #f00;
+  text-decoration: underline;
+  margin-left: 5px;
+  padding-left: 5px;
+}
+
+a.go_top:hover{
+  color: #0ff;
+  text-decoration: underline;
+}
+/* ----- Css for About Page ends ----- */
+
+/* ----- Css for Coffee Beans Page starts ----- */
+
+table{
+  border-spacing: 0px;
+  border-collapse: collapse;
+  color: #000;
+  width: 100%;
+  height: auto;
+  border-radius: 15px;
+  display: inline-block; 
+}
+div #free{
+  width: 150px;
+  height: 50px;
+  right: 3px;
+  padding-bottom: 15px;
+  margin: 5px 3px 5px 1px;
+  padding-right: 0;
+  background-color: #fff;
+  color: #f00;
+  font-family: 'PT Sans', sans-serif;
+  font-weight: 700;
+  font-size: 24px;
+  text-align: center;
+  box-shadow: 0px 7px 10px rgba(50,0,0,0.75);
+  border-radius: 15px;
+}
+div #free:hover{
+  background-color: #f93;
+}
+caption{
+  color: #000;
+  text-align: left;
+  font-weight: 700;
+  font-size: 20px;
+  padding: 5px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+legend{
+   background-color: #fc9;
+   color: #000;
+   padding: 7px;
+   border-radius: 10px;
+}
+td,th{
+  border: 1px solid #fb6; 
+}
+th{ 
+  color: #000;
+  background-color: #fc9;
+  text-align: center;
+}
+th img{
+  background-color: #fff;
+  display: none;
+}
+td{
+  text-align: left;
+  padding: 5px;
+}
+h2 p{
+  padding: 5px;
+}
+/* ----- Css for Coffee Beans Page ends ----- */
+
+/* ----- Css for Contact Page starts ----- */
+form{
+  width: 100%;
+
+}
+label{
+  width: 200px;
+  display: block;
+  float: left;
+  }
+form p{
+  clear: both;
+}
+input+label{
+  float: none;
+  display: inline;
+  width: auto;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="date"],
+input[type="submit"],
+input[type="reset"]{
+  width: 180px;
+  background-color: #fc9;
+  border: 1px solid #fc9;
+  border-radius: 10px;
+  padding-left: 22px;
+  font-size: 18px;
+  padding-top: 4px;
+  padding-bottom: 5px;
+  font-style: italic;
+  opacity: 0.6;
+}
+select#gender{
+  background-color: #fc9;
+  font-size: 18px;
+  opacity: 0.6;
+}
+fieldset{
+  border: 2px solid #fc9;
+  padding: 15px;
+  border-radius: 15px;
+  margin: 10px 5px 10px 5px;
+  width: 100%;
+}
+textarea#comments{
+  border-radius: 10px;
+  box-shadow: 5px 10px 20px #fc9 inset;
+}
+.slogan {
+  float: right;
+  width: 35%;
+  padding: 1px;
+}
+.slogan img{
+  border-radius: 15px;
+  margin-top: 10px;
+  margin-right: 20px;
+}
+.slogan img:hover{
+  transform: scale(1.2);
+}
+    
+/* ----- Css for Contact Page ends ----- */
+
+
+/* ----- Css for Menu Page starts ----- */
+
+.column {
+  float: left;
+  width: 33.0%;
+  
+
+}
+.column img{
+    border-radius: 15px;
+    margin-top: 15px;
+}
+.column img:hover{
+  transform: scale(1.3);
+}
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+h2 #menu{
+  text-align: center;
+}
+
+
+div #content{
+  column-count: 2;
+  column-gap: 10px;
+  padding-left: 5px;
+  margin-top: 5px;
+}
+h2{
+  font-weight: bold;
+  font-size: 18px;
+  font-style: italic;
+}
+p.cursive{
+  font-style: italic;
+  font-size: 14px;
+}
+
+  /* ----- Css for Menu Page ends ----- */
+

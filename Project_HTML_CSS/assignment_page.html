@@ -1,0 +1,393 @@
+<!doctype html>
+
+<html lang="en">
+<!-- 
+//////////////////////////////////
+//    WDD4 - 2018               //
+//    Capstone Project          //
+//    Student ID: 3107483       //
+//    Maryna Haidashevska       //
+//    Instructor: Brent Scott   //             
+//    Date: December 11, 2018   //
+//                              //
+//////////////////////////////////
+-->
+  <head>
+    <title>Coffee Time Coffee Beans Page</title>
+    <meta charset="utf-8" />
+    
+    <meta name="description" content="Coffee Time is a coffee shop with variety of coffee drinks and baked goods, located in heart of city Winnipeg, in Downtown, address 123Portage Avenue" />
+    <meta property="og:image:width" content="960" />
+    
+    
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,400i,700%7cPT+Sans:700" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Eczar:800" rel="stylesheet" />
+    
+    <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" 
+          href="styles/capstone_project_screen.css"
+          type="text/css"
+          media="screen and (min-width: 751px)"
+    />
+
+    
+    <!-- Conditional comments for IE browsers -->
+    
+    <!--[if LTE IE 8]>
+      <link rel="stylesheet" href="capstone_old_ie.css" type="text/css" />
+    <![endif]-->
+    <style>
+     /*To make our desktop to be responsible */
+      @media screen and (min-width: 769px){ /*for desctop */
+        #wrapper{
+          width: 960px; 
+          background-color: #fff;
+          position: relative;
+        }
+      }
+      @media screen and (max-width: 768px){ /*for mobile */
+        #wrapper{
+          width: 100%;
+          background-color: #f96;
+          margin: 0 auto; 
+          position: relative;
+        }
+      }
+      @media screen (min-width: 769px) and (max-width: 959px){ /*for devices more than 769px and less 959px */
+        #wrapper{
+          width: 100%;
+          background-color: #fff;
+          position: relative;
+        }
+      }
+
+       body{
+      font-size: 18px;
+      line-height: 1.3em;
+      font-family: 'Montserrat', Arial, sans-serif;
+      color: #000;
+      background-color: #fff;
+      margin: 0 auto;
+    }
+
+    /*CSS style for wrapper*/
+    #wrapper{
+      width: 960px;
+      top: 0;
+      margin: 0 auto; 
+      background-color: #fff;
+      position: relative;
+    }
+
+    /*CSS style for header */
+    header{
+      background-color: #fff;
+      width: 100%;
+      position: relative;
+     
+    }
+    /*CSS style for main logo */
+    div #main_logo{
+      width: 373px;
+      height: 83px;
+      margin-left:  5px;
+      top: 10px;
+      background-image: url(..new_logo1.png);
+      background-repeat: no-repeat;
+      position: absolute;
+      z-index: 10000;  
+    }
+    /*CSS style for facebook logo */
+    div #facebook{
+      background-image: url(..fb_icon.svg);
+      background-repeat: no-repeat;
+      width: 40px;
+      height: 40px;
+      position: absolute;
+      right: 20px;
+      margin-top: 15px;
+    }
+    div #instagram{  /*CSS style for facebook logo */
+      background-image: url(..insta_icon.svg);
+      background-repeat: no-repeat;
+      width: 40px;
+      height: 40px;
+      position: absolute;
+      right: 70px;
+      margin-top: 15px;
+    }
+    /*CSS style for address in  a header area */
+    
+    div #header{
+    width: 100%;
+      height:150px;
+      border-radius: 15px;
+      background: linear-gradient(135deg, #f0b7a1 0%,#8c3310 49%,#8c3310 49%,#bf6e4e 99%,#8c3310 100%,#752201 100%); 
+      box-shadow: 0 2px 1px rgba(0,0,0,0.75);
+      background-color: #a95b0d;
+      position: relative;
+    }
+    /*CSS for site navigation*/ 
+    header nav{
+      width: 100%;
+      min-height: auto;
+      text-align: center;
+      position: absolute;
+      top: 78px;
+    }
+    header nav ul{
+      margin: 0;
+      position: absolute;
+      right: 12px; 
+    }
+    header nav ul li{
+      display: inline-block;
+      list-style-type: none;
+      float: left;
+      padding-top: 8px;
+      padding-right: 3px;
+    }
+    header nav ul li a{
+      font-size: 24px;
+      padding: 15px 18px 15px 20px;
+      border-radius: 20px;
+      display: block;
+      text-decoration: none;
+      color: #fff;
+      text-shadow: 0 2px 3px rgba(0,0,0,0.8);
+      opacity: 1;
+      font-size: 18px;
+      transition: all ease-in-out .2s;
+    } 
+    /*CSS style for navigation buttoms when mouse over */
+    header nav ul li a:hover{
+      background-color: #fc0;
+      opacity: 0.65;
+      text-decoration: underline;
+      text-shadow: none;
+    }
+    
+    /* CSS style for main content */
+    main{
+      font-size: 18px;
+      display: block;
+      background-color: #fff;
+      line-height: 1.6em;
+      min-height: 1100px;
+      text-align: left; 
+      z-index: 10;
+      margin: 0 auto;
+      position: relative;
+    }
+    main p{
+      margin-left: 5px;
+    }
+    div #inside img{  /*CSS style for images on home page */
+      float: left;
+      opacity: 0.85;
+      margin-top: 10px;
+      margin-right: 22px;
+      margin-left: 5px;
+      border-radius: 15px;
+      width: 465px;
+      height: 310px; 
+      margin-bottom: 10px;
+      box-shadow: 0 2px 1px rgba(0,0,0,0.75);
+    }
+    div #outside img{
+      float: left;
+      opacity: 0.85;
+      margin-top: 10px;
+      border-radius: 15px;
+      width: 465px;
+      height: 310px; 
+      margin-bottom: 10px;
+      box-shadow: 0 2px 1px rgba(0,0,0,0.75);
+    }
+    div #mobile_img{
+      display: none;
+    }
+    h1{
+      text-align: left;
+      font-size: 22px;
+      font-weight: 700;
+      margin-top: 17px;
+    }
+    h2{
+      font-size: 20px;
+      font-style: italic;
+      font-weight: 700;
+      margin-left: 5px;
+    }  
+
+    /* ----- Css for Coffee Beans Page starts ----- */
+
+    table{  /*CSS style for table */
+      border-spacing: 0px;
+      /*border: 1px solid #fc9;*/
+      border-collapse: collapse;
+      color: #000;
+      width: 100%;
+      height: auto;
+      border-radius: 15px;
+      display: inline-block;
+      margin: 15px 2px 5px 2px;
+    }
+    div #free{  /*CSS style for box with information about free shipment */
+      float: right;
+      width: 180px;
+      height: 60px;
+      right: 3px;
+      padding: 3px;
+      padding-right: 0;
+      background-color: #fff;
+      color: #f00;
+      font-family: 'PT Sans', sans-serif;
+      font-weight: 700;
+      font-size: 24px;
+      text-align: center;
+      box-shadow: 0px 7px 10px rgba(50,0,0,0.75);
+      border-radius: 15px;
+    }
+    div #free:hover{
+      background-color: #f93;
+    }
+    caption{  /*CSS style for caption in tables */
+      color: #000;
+      text-align: left;
+      font-weight: 700;
+      font-size: 20px;
+      padding: 5px;
+    
+      margin-bottom: 5px;
+    }
+    td,th{
+      border: 1px solid #fb6; 
+    }
+    th{ 
+      color: #000;
+      background-color: #fc9;
+      text-align: center;
+    }
+    th img{
+      background-color: #fff;
+    }
+    td{
+      text-align: left;
+      padding: 5px;
+    }
+    h2 p{
+      padding: 5px;
+    }
+    /* ----- Css for Coffee Beans Page ends ----- */
+    /* CSS for footer area */
+    footer{
+      min-height: 120px;
+      background-color: #a95b0d;
+      background: linear-gradient(135deg, #f0b7a1 0%,#8c3310 49%,#8c3310 49%,#bf6e4e 99%,#8c3310 100%,#752201 100%); 
+      border-radius: 15px;
+      position: relative;
+      margin-top: 15px;
+    }
+    /* CSS for company address in footer area */
+    footer div#address address{
+      position: absolute;
+      text-align: right;
+      font-style: italic;
+      font-size: 14px;
+      right: 25px;
+      top: 10px;
+      line-height: 1em;
+      text-shadow: 0px 1px 3px rgba(0,0,0,0.5);
+      z-index: 10;
+    }
+
+    /* CSS for styling logo in footer area */
+    footer div#main_logo_footer{
+      background-image: url(new_logo1.png);
+      background-repeat: no-repeat;
+      position: absolute;
+      width: 373px;
+      height: 83px;
+      padding: 10px; 
+    }
+
+    /* CSS for styling copyright info */
+    footer p.copy{
+      font-size: 14px;
+      text-align: center;
+      padding-top: 100px;
+      line-height: 1em;
+    }
+      
+    </style>
+    <script src="old_ie.js"></script>
+  </head> 
+ 
+  <body>
+    <div id="wrapper">
+      <header><!-- Main logo and services tagline -->
+        <div id="header">
+          <div id="main_logo"></div>
+          <div id="facebook"></div>
+          <div id="instagram"></div>
+          </div>
+        <nav> 
+        <!-- Hamburger Menu-->
+          <a href="#" id="menubutton">
+            <span id="topbar"></span>
+            <span id="middlebar"></span>
+            <span id="bottombar"></span>
+          </a>
+          <ul id="navlist">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about_page.html">About</a></li>
+            <li><a href="menu_page.html">Menu</a></li>
+            <li><a href="coffee_beans_page.html">Coffee Beans</a></li>
+            <li><a href="contact_page.html">Contact</a></li>
+          </ul>
+        </nav>
+      </header>
+      <!-- Navigation menu ends -->
+      
+      <main>
+      <h1>Coffee we offer</h1>
+      <table>
+        <caption><div id="free">Free shipping over 49$</div></caption>
+      
+        
+          <img src="order1.jpg" 
+                   width="100" 
+                   height="75" 
+                   alt="Bolivia Colonial Caranavi(South America)" /></th>
+          <td>Bolivia Colonial Caranavi(South America)</td>
+          <td>Slightly Spicy, Full Body, Good Balance</td>
+          <td>$25.00</td>
+        </tr>
+      
+       
+     
+      <!-- Bottom level row -->
+      </table>
+    
+     </main>
+     
+      <footer><!-- Footer -->
+        <div id="main_logo_footer">
+        </div>
+        <div id="address">
+          <address><!-- Address info -->
+            Coffee Time<br />
+            123 Portage Avenue E<br />
+            Winnipeg, MB<br />
+            R3M 2K7<br />
+            204-123-45-67
+          </address>
+        </div>
+        <!-- Copyright info -->
+        <p class="copy">Copyright &copy; 2018 - Coffee Time</p>
+      </footer>
+    </div>
+  </body>
+
+</html>

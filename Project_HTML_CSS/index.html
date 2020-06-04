@@ -1,0 +1,192 @@
+<!doctype html>
+
+<html lang="en">
+<!-- 
+//////////////////////////////////
+//    WDD4 - 2018               //
+//    Capstone Project          //
+//    Student ID: 3107483       //
+//    Maryna Haidashevska       //
+//    Instructor: Brent Scott   //             
+//    Date: December 11, 2018   //
+//                              //
+//////////////////////////////////
+-->
+  <head>
+    <title>Coffee Time Contact Page</title>
+    <meta charset="utf-8" />
+    
+    <meta name="description" content="Coffee Time is a coffee shop with variety of coffee drinks and baked goods, located in heart of city Winnipeg, in Downtown, address 123Portage Avenue" />
+    <meta name="keyword" content="coffee shop, coffee cafe, cafe downtown winnipeg, coffee and baked goods, winnipeg, places to relax" />    
+    
+    <link rel="icon" href="images/favicon.png" type="image/gif" />
+    <link rel="apple-touch-icon" href="images/favicon_iphone_57x57.png" type="image/gif" sizes="57x57" />
+    <link rel="apple-touch-icon" href="images/favicon_iphone_72X72.png" type="image/gif" sizes="72x72" />
+    <link rel="apple-touch-icon" href="images/favicon_iphone_114X114.png" type="image/gif" sizes="114x114" />
+    <link rel="apple-touch-icon" href="images/favicon_iphone_144x144.png" type="image/gif" sizes="144x144" />
+
+    <meta property="og:url" content="http://salsa.uwde.ca/~h.maryna" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Coffee Time" />
+    <meta property="og:description" content="Coffee Time is a coffee shop with variety of coffee drinks and baked goods, located in heart of city Winnipeg, in Downtown, address 123 Portage Avenue" />
+    <meta property="og:site_name" content="Coffee Time" />
+    <meta property="og:image" content="http://salsa.uwde.ca/~h.maryna/cafe_facebook.html"/>
+    <meta property="og:image:width" content="960" />
+    
+    
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,400i,700%7cPT+Sans:700" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Eczar:800" rel="stylesheet" />
+    
+    <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" 
+          href="styles/capstone_project_screen.css"
+          type="text/css"
+          media="screen and (min-width: 751px)"
+    />
+    <link rel="stylesheet"
+          href="styles/capstone_mobile.css"
+          type="text/css"
+          media="screen and (max-width: 750px)"
+    />
+    <link rel="stylesheet"
+          href="styles/capstone_print.css"
+          type="text/css"
+          media="print"
+    />
+    
+    <!-- Conditional comments for IE browsers -->
+    
+    <!--[if LTE IE 8]>
+      <link rel="stylesheet" href="styles/capstone_old_ie.css" type="text/css" />
+    <![endif]-->
+    
+    <style>
+     /*To make our desktop to be responsible */
+      @media screen and (min-width: 769px){ /*for desctop */
+        #wrapper{
+          width: 960px; 
+          background-color: #fff;
+          position: relative;
+        }
+      }
+      @media screen and (max-width: 768px){ /*for mobile */
+        #wrapper{
+          width: 100%;
+          background-color: #f96;
+          margin: 0 auto; 
+          position: relative;
+        }
+      }
+      @media screen (min-width: 769px) and (max-width: 959px){ /*for devices more than 769px and less 959px */
+        #wrapper{
+          width: 100%;
+          background-color: #fff;
+          position: relative;
+        }
+
+    </style>
+    <script src="old_ie.js"></script>
+  </head> 
+ 
+  
+  <body>
+    <div id="wrapper">
+      <header><!-- Main logo and services tagline -->
+        <div id="header">
+          <div id="main_logo"></div>
+          <div id="facebook"></div>
+          <div id="instagram"></div>
+        <nav> 
+        <!-- Hamburger Menu-->
+          <a href="#" id="menubutton">
+            <span id="topbar"></span>
+            <span id="middlebar"></span>
+            <span id="bottombar"></span>
+          </a>
+          <ul id="navlist">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about_page.html">About</a></li>
+            <li><a href="menu_page.html">Menu</a></li>
+            <li><a href="coffee_beans_page.html">Coffee Beans</a></li>
+            <li><a href="contact_page.html">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+      </header>
+      
+      <main>
+        <div id="mobile_img"><img src="images/mobile_image.jpg" style="width:100%" alt="cup with hot coffee and cookies" /></div>
+        <div id="inside"><img src="images/design_inside_465.jpg" 
+                              alt="Coffee Shop Inside" 
+                              width="465"
+                              height="310"/>
+        </div>      
+        <div id="outside"><img src="images/design_outside_465.jpg" 
+                               alt="Coffee Shop Outside"
+                               width="465"
+                              height="310"/>
+        </div>
+        
+        
+          <div id="cta" class="shaking">Come for the coffee, stay for the cookies. 
+            123 Portage Avenue E
+          </div>
+        <div id="home_page">
+        <h1>Our atmosphere</h1>
+          <p>In our coffee shop everybody is treated like a family member. 
+          Here you can find a dark corner to stay alone with your thoughts
+          or, on the contrary, meet new friends, and of course 
+          you will always be offered a cup of freshly roasted coffee with our 
+          delishious baked goods.</p>
+       
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2570.206450323106!2d-97.1376933486819!3d49.89492727930149!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x52ea715b2c44c293%3A0xa62adcaf49a46bd5!2s123+Portage+Ave+E%2C+Winnipeg%2C+MB!5e0!3m2!1sen!2sca!4v1544223487033" 
+                style="border:0"
+                allowfullscreen>
+        </iframe>
+        <h2>Location</h2>
+          
+        <p>Coffee Time is located on the east side of Portage Avenue at:</p>
+        <p>123 Portage Avenue E</p>
+        <p>Winnipeg, MB Canada R3M 2K7</p>
+        <p>Phone 204-123-4567<p>
+        <p>Email info@coffeetime.com</p>
+        <a href="#" class="go_top">Go to the top</a>  
+
+        <h2>Store Hours</h2>
+          <p class="content">We are open</p>
+          <p class="content">Monday - Friday 7am–7pm</p>
+          <p class="content">Saturday - Sunday 10am–6pm</p>
+          <p class="content">Open most holidays</p>
+        </div>
+        <div class="row">
+          <div class="column">
+            <img src="images/owner.jpg" alt="Women Owner" style="width:100%">
+          </div>
+          <div class="column">
+            <img src="images/owner_man.jpg" alt="Man Owner" style="width:100%">
+          </div>
+          <div class="column">
+            <img src="images/two_owners.jpg" alt="Two Owners" style="width:100%">
+          </div>
+        </div>
+      </main>
+      
+      <footer><!-- Footer -->
+        <div id="main_logo_footer">
+        </div>
+        <div id="address">
+          <address><!-- Address info -->
+            Coffee Time<br />
+            123 Portage Avenue E<br />
+            Winnipeg, MB<br />
+            R3M 2K7<br />
+            204-123-45-67
+          </address>
+        </div>
+        <!-- Copyright info -->
+        <p class="copy">Copyright &copy; 2018 - Coffee Time</p>
+      </footer>
+    </div>
+  </body>
+
+</html>
