@@ -1,0 +1,551 @@
+<!doctype html>
+
+<html lang="en">
+<!-- 
+//////////////////////////////////
+//    WDD4 - 2018               //
+//    Assignment 3              //
+//    Student ID: 3107483       //
+//    Maryna Haidashevska       //
+//    Instructor: Steve George  //             
+//    Date: February 19, 2019   //
+//                              //
+//////////////////////////////////
+-->
+  <head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" type="text/css" href="jqui/jquery-ui.css" />
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="jqui/jquery-ui.js"></script>
+    <title>Assignment 3</title>
+    
+    <meta name="viewport" content="width=device-width" />
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,400i,700%7cPT+Sans:700" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Eczar:800" rel="stylesheet" />
+  
+    <style>
+     /*To make our desktop to be responsible */
+      @media screen and (min-width: 769px){ /*for desctop */
+        #wrapper{
+          width: 960px; 
+          background-color: #fff;
+          position: relative;
+        }
+      
+      body{
+      font-size: 18px;
+      line-height: 1.3em;
+      font-family: 'Montserrat', Arial, sans-serif;
+      color: #000;
+      background-color: #fff;
+      margin: 0 auto;
+    }
+
+    /*CSS style for wrapper*/
+    #wrapper{
+      width: 960px;
+      top: 0;
+      margin: 0 auto; 
+      background-color: #fff;
+      position: relative;
+    }
+
+    /*CSS style for header */
+    header{
+      background-color: #fff;
+      width: 100%;
+      position: relative;
+     
+    }
+    /*CSS style for main logo */
+    div #main_logo{
+      width: 373px;
+      height: 83px;
+      margin-left:  5px;
+      top: 10px;
+      background-image: url(images/new_logo1.png);
+      background-repeat: no-repeat;
+      position: absolute;
+      z-index: 10000;  
+    }
+    /*CSS style for facebook logo */
+    div #facebook{
+      background-image: url(images/fb_icon.svg);
+      background-repeat: no-repeat;
+      width: 40px;
+      height: 40px;
+      position: absolute;
+      right: 20px;
+      margin-top: 15px;
+    }
+    div #instagram{  /*CSS style for facebook logo */
+      background-image: url(images/insta_icon.svg);
+      background-repeat: no-repeat;
+      width: 40px;
+      height: 40px;
+      position: absolute;
+      right: 70px;
+      margin-top: 15px;
+    }
+    /*CSS style for address in  a header area */
+    
+    div #header{
+    width: 100%;
+      height:150px;
+      border-radius: 15px;
+      background: linear-gradient(135deg, #f0b7a1 0%,#8c3310 49%,#8c3310 49%,#bf6e4e 99%,#8c3310 100%,#752201 100%); 
+      box-shadow: 0 2px 1px rgba(0,0,0,0.75);
+      background-color: #a95b0d;
+      position: relative;
+    }
+    /*CSS for site navigation*/ 
+    header nav{
+      width: 100%;
+      min-height: auto;
+      text-align: center;
+      position: absolute;
+      top: 78px;
+    }
+    header nav ul{
+      margin: 0;
+      position: absolute;
+      right: 12px; 
+    }
+    header nav ul li{
+      display: inline-block;
+      list-style-type: none;
+      float: left;
+      padding-top: 8px;
+      padding-right: 3px;
+    }
+    header nav ul li a{
+      font-size: 24px;
+      padding: 15px 18px 15px 20px;
+      border-radius: 20px;
+      display: block;
+      text-decoration: none;
+      color: #fff;
+      text-shadow: 0 2px 3px rgba(0,0,0,0.8);
+      opacity: 1;
+      font-size: 18px;
+      transition: all ease-in-out .2s;
+    } 
+    /*CSS style for navigation buttoms when mouse over */
+    header nav ul li a:hover{
+      background-color: #fc0;
+      opacity: 0.65;
+      text-decoration: underline;
+      text-shadow: none;
+    }
+    
+    /* CSS style for main content */
+    main{
+      font-size: 18px;
+      display: block;
+      background-color: #fff;
+      line-height: 1.6em;
+      min-height: 1100px;
+      text-align: left; 
+      z-index: 10;
+      margin: 0 auto;
+      position: relative;
+    }
+    main p{
+      margin-left: 5px;
+    }
+    div #inside img{  /*CSS style for images on home page */
+      float: left;
+      opacity: 0.85;
+      margin-top: 10px;
+      margin-right: 22px;
+      margin-left: 5px;
+      border-radius: 15px;
+      width: 465px;
+      height: 310px; 
+      margin-bottom: 10px;
+      box-shadow: 0 2px 1px rgba(0,0,0,0.75);
+    }
+    div #outside img{
+      float: left;
+      opacity: 0.85;
+      margin-top: 10px;
+      border-radius: 15px;
+      width: 465px;
+      height: 310px; 
+      margin-bottom: 10px;
+      box-shadow: 0 2px 1px rgba(0,0,0,0.75);
+    }
+    div #mobile_img{
+      display: none;
+    }
+    h1{
+      text-align: left;
+      font-size: 22px;
+      font-weight: 700;
+      margin-top: 17px;
+    }
+    h2{
+      font-size: 20px;
+      font-style: italic;
+      font-weight: 700;
+      margin-left: 5px;
+      cursor: pointer;
+      background-color: #fec;
+      width: 350px;
+      padding: 5px 5px 5px 10px;
+      border-radius: 15px;
+    }  
+    div #home_page{
+      margin-left: 3px;
+    }
+
+    .column {
+      float: left;
+      width: 32.0%;
+    }
+    .column img{
+      border-radius: 15px;
+      margin-top: 15px;
+    }
+    .column img:hover{
+      transform: scale(1.2);
+    }
+    .row::after {
+      content: "";
+      clear: both;
+      display: table;
+    }
+
+    /* CSS for footer area */
+    footer{
+      min-height: 15px;
+      background-color: #a95b0d;
+      background: linear-gradient(135deg, #f0b7a1 0%,#8c3310 49%,#8c3310 49%,#bf6e4e 99%,#8c3310 100%,#752201 100%); 
+      border-radius: 15px;
+      position: relative;
+      margin-top: 15px;
+    }
+    /* CSS for styling copyright info */
+    footer p.copy{
+      font-size: 14px;
+      text-align: center;
+      padding: 10px;
+      line-height: 1,5em;
+    }
+  /* ----- Css for Home Page ends ----- */
+  
+  /* ----- CSS for modal box ---------- */
+
+  #overlay{
+        background: #000;
+        opacity: 0;
+        position: fixed;
+        top: 0;
+        right: 0;
+        left: 0;
+        bottom: 0;
+        z-index: 1000;
+        pointer-events: none;
+      }
+
+      #modal{
+        width: 250px;
+        height: 200px;
+        position: absolute;
+        top: 10px;
+        left: -150px;
+        background: #fff;
+        border: 3px solid #f60;
+        border-radius: 15px;
+        z-index: 10000;
+        display: none;
+        padding: 15px;
+      }
+      #close_modal{
+        width: 15px;
+        height: 15px;
+        line-height: 20px;
+        position: absolute;
+        border: 2px solid #f60;
+        border-radius: 5px;
+        background: #fff;
+        color: #f00;
+        padding: 2px 5px 3px 5px; 
+        font-weight: 700;
+        text-align: center;
+        cursor: pointer;
+        top: 3px;
+        right: 5px;
+      }
+      #display_modal{
+        background-color: #f60;
+        margin-left: 17px;
+        width: 250px;
+        height: 35px;
+        padding-left: 10px;
+        font-size: 18px;
+        padding-top: 2px;
+        padding-bottom: 2px;
+        border-radius: 10px;
+        color: #c3o;
+        margin-top: 7px;
+        margin-bottom: 20px;
+        display: inline-block;
+        cursor: pointer;
+        font-style: italic;
+
+      }
+      #display_modal:hover{
+        background-color: #c30;
+        color: #fff;
+        opacity: 0.65;
+
+      }
+      
+      /* ------------CSS for modal box ends -------- */
+
+      /* -----------CSS for buttons --------------- */
+      button{
+        background-color: #f60;
+        margin-left: 45px;
+        width: 250px;
+        height: 35px;
+        padding-left: 10px;
+        font-size: 18px;
+        padding-top: 2px;
+        padding-bottom: 2px;
+        border-radius: 10px;
+        color: #c3o;
+        margin-top: 7px;
+        margin-bottom: 20px;
+        display: inline-block;
+        cursor: pointer;
+        font-style: italic;
+
+      }
+      button:hover{
+        background-color: #c30;
+        color: #fff;
+        opacity: 0.65;
+      }
+      /* -----------CSS for buttons ends-------------- */
+      
+      /* -----------CSS for making some div hidden --- */
+      .hide_this{
+        display: none;
+        background-color: #fec;
+        border-radius: 15px;
+      }
+
+     
+
+    </style>
+
+    <script>
+      
+
+      $(document).ready(function(){
+
+      /**
+       * @param taking all paragraphs as a parametr
+       * change its font-size on 12px
+       * @return all paragaraphs have size 12px
+       */
+
+      // making text in all paragraphs with small size
+      $('#small_text').click(function(e){
+        $('p').css('font-size','12px')
+      });
+
+       /**
+       * @param taking all paragraphs as a parametr
+       * change its font-size on 16px
+       * @return all paragaraphs have size 16px
+       */
+      
+      // making text in all paragraphs with medium size
+      $('#medium_text').click(function(e){
+        $('p').css('font-size','16px')
+      });
+
+      /**
+       * @param taking all paragraphs as a parametr
+       * change its font-size on 20px
+       * @return all paragaraphs have size 20px
+       */
+      
+     // making text in all paragraphs with medium size
+      $('#large_text').click(function(e){
+        $('p').css('font-size','20px')
+      });
+    
+       /**
+        * @param  overlay layer change its opacity from 0 to 0.8 becomes visible
+        * @param our modal box displays as a block element from position left -150px to 500px and becomes visible from 0 opacity to 0.8
+        * @return animated visible modal box
+        */
+       
+      $('#display_modal').click(function(e){
+
+        $('#overlay').css('opacity','0.8'); 
+        $('#modal').css('display','block');
+        $('#modal').animate({
+                   'left': '500px',
+                   'opacity': '0.8',
+        });
+      }); 
+
+      /**
+        * @param  overlay layer change its opacity from 0.8 to 0 and becomes invisible
+        * @param our modal box chanhed its position from left 500px to -150px 
+        * and becomes invisible by changing opacity from 0.8 opacity to 0
+        * @return VOID (hidden modal box)
+        */
+       
+      $('#close_modal').click(function(e){
+        $('#overlay').css('opacity', '0.0');
+        $('#modal').animate({
+                   'left': '-150px',
+                   'opacity': '0',
+        });
+      });
+    
+    /**
+     * @param  two targeted divs
+     * @return hidden divs can slode down, visible can slide toggle 
+     */
+    $('.drop_down').click(function(){
+      var target = $(this).data('target');
+      if ($(target).is(':hidden')){
+        $(target).slideDown();
+      } else{
+        $(target).slideToggle();
+        };
+     });
+
+    }); // end of document. ready function 
+    
+    
+        
+
+    </script>
+
+  </head> 
+ 
+  
+  <body>
+    <button id="display_modal">Display modal</button>
+    <div id="wrapper">
+      <header><!-- Main logo and services tagline -->
+        <div id="header">
+          <div id="main_logo"></div>
+          <div id="facebook"></div>
+          <div id="instagram"></div>
+        <nav> 
+          <ul id="navlist">
+            <li><a href="index.html" class="menu">Home</a></li>
+            <li><a href="about_page.html" class="menu">About</a></li>
+            <li><a href="menu_page.html" class="menu">Menu</a></li>
+            <li><a href="coffee_beans_page.html" class="menu">Coffee Beans</a></li>
+            <li><a href="contact_page.html" class="menu">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+      </header>
+      
+      <main>
+        <div id="inside"><img src="images/design_inside_465.jpg" 
+                              alt="Coffee Shop Inside" 
+                              width="465"
+                              height="310"/>
+        </div>      
+        <div id="outside"><img src="images/design_outside_465.jpg" 
+                               alt="Coffee Shop Outside"
+                               width="465"
+                              height="310"/>
+        </div>
+
+        <button id="small_text">Small Text</button>
+        <button id="medium_text">Medium Text</button>
+        <button id="large_text">Large Text</button>
+
+        <div id="home_page">
+
+        <h1>Hello from Coffee Time</h1>
+          <p>Coffee Time is a Winnipeg-based company registered in the province of 
+          Manitoba. Meg Rayan is president of Coffee Time, and her husband, Bob Krichkov,
+          is partner and owner.</p>
+          <p>Our parents immigrated from Brazil. They usually told us story how they 
+          liked to smell real coffee in Brazil. And when we married, we decided to 
+          open a coffee shop.</p>
+
+        <h1>Our atmosphere</h1>
+          <p>In our coffee shop everybody is treated like a family member. 
+          Here you can find a dark corner to stay alone with your thoughts
+          or, on the contrary, meet new friends, and of course 
+          you will always be offered a cup of freshly roasted coffee with our 
+          delishious baked goods.</p>
+       
+        <h2 data-target="#location" class="drop_down">Location (Drop-down box #1)</h2>
+
+        <div id="location" class="hide_this"> 
+        <p>Coffee Time is located on the east side of Portage Avenue at:</p>
+        <p>123 Portage Avenue E</p>
+        <p>Winnipeg, MB Canada R3M 2K7</p>
+        <p>Phone 204-123-4567<p>
+        <p>Email info@coffeetime.com</p>
+        </div>
+
+        <a href="#" class="go_top">Go to the top</a>  
+
+        <h2 data-target="#hours" class="drop_down">Store Hours (Drop-down box #2)</h2>
+
+        <div id="hours" class="hide_this">
+          <p class="content">We are open</p>
+          <p class="content">Monday - Friday 7am–7pm</p>
+          <p class="content">Saturday - Sunday 10am–6pm</p>
+          <p class="content">Open most holidays</p>
+        </div>
+
+        </div> 
+
+        <div class="row">
+          <div class="column">
+            <img src="images/owner.jpg" alt="Women Owner" style="width:100%">
+          </div>
+          <div class="column">
+            <img src="images/owner_man.jpg" alt="Man Owner" style="width:100%">
+          </div>
+          <div class="column">
+            <img src="images/two_owners.jpg" alt="Two Owners" style="width:100%">
+          </div>
+        </div>
+      </main>
+      
+      <footer><!-- Footer -->
+        <!-- Copyright info -->
+        <p class="copy">Copyright &copy; 2018 - Coffee Time</p>
+      </footer>
+    </div>
+
+  <noscript>
+      This page required JavaScript. Please enable it
+  </noscript>
+
+  <div id="overlay"></div>
+  <div id="modal">
+    <div id="close_modal">X</div>
+
+    <div id="modal_content"></div>
+
+    <h3>This is my Coffee box</h3>
+    <p>Bad Day? Coffee. <br />
+       Good Day? Coffee. <br />
+       Stressed? Coffee. <br />
+       Happy? Coffee. <br />
+       Inspired? Coffee. <br />
+       Coffee? Coffee. <br /></p>
+  </div>
+  </body>
+
+</html>
