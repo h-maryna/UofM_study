@@ -1,0 +1,271 @@
+<!doctype html>
+
+<html lang="en"> 
+  <head>
+    <meta charset="utf-8" />
+    <title>Assignment 2 Page 2</title>
+    <script src="cookie_functions.js"></script>
+
+    
+    
+    <style>
+    /*CSS styles embeded */
+    body{
+      font-size: 16px;
+      font-family: Arial, sans-serif; 
+      background-color: #fff;
+    }
+    
+    h1,h2{
+      color: #009;
+      text-shadow: 0px 2px #99f;
+      text-align: left;
+      margin-left: 20px;
+      line-height: 1.3em;
+    }
+    button{
+      font-size: 18px;
+      margin-left: 25px;
+      width: 150px;
+      padding: 8px;
+      border-radius: 10px;
+      color: #00f;
+      margin-top: 7px;
+      display: inline-block;
+      width: 180px;
+    }
+    button:hover{
+      background-color: #f00;
+      color: #fff;
+      opacity: 0.65;
+    }
+    table{
+      margin-top: 0 auto;
+      width: 450px;
+      margin-left: 15px;
+      border: 2px solid #00f;
+      border-collapse: collapse;
+      text-align: left;
+      padding: 7px;
+    }
+    th{
+      font-size: 18px;
+      color: #009;
+    }
+    th,td,tr{
+      border: 1px solid #03c;
+      border-collapse: collapse;
+      background-color: #ccf;
+      padding: 10px;
+    }
+   
+  
+    </style>
+
+    <script>
+
+  
+
+      // Function attached to window.onload event
+
+      // function to write cookies
+      /**
+       * get value of the cookies from the user provided information
+       * @return write information into table fields(from HTML) from provided info
+       */
+      window.onload = function(){
+         
+      
+      // Get cookies
+       // get value for the f_name from ID "first_name"
+       var f_name = getCookies('first_name');
+       document.getElementById('first_name').innerHTML = f_name;
+
+       // get value for the f_name from ID "last_name"
+       var l_name = getCookies('last_name');
+       document.getElementById('last_name').innerHTML= l_name;
+
+       // get value for the f_name from ID "tel_number"
+       var t_number = getCookies('tel_number');
+       document.getElementById('tel_number').innerHTML = t_number;
+
+       // get value for the f_name from ID "email_address"
+       var e_email = getCookies('email_address');
+       document.getElementById('email_address').innerHTML = e_email;
+
+       // get value for the f_name from ID "post_code"
+       var p_code = getCookies('post_code');
+       document.getElementById('post_code').innerHTML = p_code;
+
+       // get value for the f_name from ID "fiull_url"
+       var f_url = getCookies('full_url');
+       document.getElementById('full_url').innerHTML = f_url;
+
+       // get value for the f_name from ID "age"
+       var a_age = getCookies('age');
+       document.getElementById('age').innerHTML = a_age;
+
+      
+
+      // functions for set up a date
+     
+    
+      /**
+     * Function to get day string from day num
+     * @param  Int num day number
+     * @return String day string
+     */
+      function getDay(num){
+        var days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+        return days[num];
+      }
+
+     /**
+     * Function to get month string from month num
+     * @param  Int num month number
+     * @return String month string
+     */
+      
+      function getMonth(num){
+        var months = ['January', 'February', 'March', 'April', 'May', 'June',
+                      'July', 'August', 'September', 'October', 'November', 'December'];
+        return months[num];
+      }
+      
+      // defyne a new variable for the Date
+      var d = new Date();
+      
+      // returns number of the full year
+      var full_year = d.getFullYear();
+
+      // returns number of the month
+      var month = d.getMonth();
+      var word_month = getMonth(month);
+      
+      // returns number of the day
+      var day = d.getDay(); 
+      var word_day = getDay(day); 
+      
+      // returns number of the day of the month
+      var date = d.getDate(); 
+
+      // returns hours 
+      var hour = d.getHours();
+      
+      var word_hour = (hour > 12) ? hour - 12 : hour;
+
+      // var text_suffix = (hour > = 12) ? 'PM' : 'AM';
+      var text_suffix = (hour >= 12) ? 'PM' : 'AM';
+
+      var minute = d.getMinutes(); // minute in the current hour
+      
+      // statemnet for minutes
+      // if less than 10, it shows 0+minutes;
+      // else shows minutes from 11 to 59 
+      
+      if(minute < 10) {
+        two_minutes = '0' + minute;
+      } else {
+        two_minutes = minute;
+      }
+      
+      
+     
+      // returns number of the seconds
+      var seconds = d.getSeconds();
+
+       // statemnet for seconds
+      // if less than 10, it shows 0+seconds;
+      // else shows seconds from 11 to 59 
+      if(seconds < 10) {
+        two_seconds = '0' + seconds;
+      } else {
+        two_seconds = seconds;
+      }
+       
+      // full_date we concantenate
+      var full_date = word_day + ', ' + date + ' ' + word_month + ' ' + full_year +
+            ', ' + word_hour + ':' + two_minutes + ':' + two_seconds + ' ' + text_suffix; 
+      
+      // change text for id="date" on full_date
+      document.getElementById('date').innerHTML = full_date;
+      
+      }
+      
+      /**
+       * function for deleting cookies
+       * set parametr = maxage = 0 for all fields
+       * try to get information via getElementById - but finds 0
+       * that's give us undefined on each fields
+       * return undefined
+       */
+      function deleteCookies(){
+
+       var maxage = 0; 
+       
+       // set cookies with maxage = 0
+       // it destroys all the cookies
+       setCookie('first_name', '', maxage);
+       setCookie('last_name', '', maxage);
+       setCookie('tel_number', '', maxage);
+       setCookie('email_address', '', maxage);
+       setCookie('post_code', '', maxage);
+       setCookie('full_url', '', maxage);
+       setCookie('age', '', maxage);
+      
+       var f_name = getCookies('first_name');
+       document.getElementById('first_name').innerHTML = f_name;
+       var l_name = getCookies('last_name');
+       document.getElementById('last_name').innerHTML= l_name;
+       var t_number = getCookies('tel_number');
+       document.getElementById('tel_number').innerHTML = t_number;
+       var e_email = getCookies('email_address');
+       document.getElementById('email_address').innerHTML = e_email;
+       var p_code = getCookies('post_code');
+       document.getElementById('post_code').innerHTML = p_code;
+       var f_url = getCookies('full_url');
+       document.getElementById('full_url').innerHTML = f_url;
+       var a_age = getCookies('age');
+       document.getElementById('age').innerHTML = a_age;
+
+       alert("You have already deleted all the cookies");
+     }
+
+
+
+
+    </script>
+    
+  </head> 
+ 
+  
+  <body>
+  <div id="cookies">
+  <h1>Cookies</h1>
+  <h2 id="date"></h2>
+  </div>
+  
+  <table>
+    <tr><th>Cookie Name</th><th>Cookie Value</th></tr>
+    <tr><td>First name</td><td id="first_name"></td></tr>
+    <tr><td>Last Name</td><td id="last_name"></td></tr>
+    <tr><td>Telephone Number</td><td id="tel_number"></td></tr>
+    <tr><td>Email Address</td><td id="email_address"></td></tr>
+    <tr><td>Post Code</td><td id="post_code"></td></tr>
+    <tr><td>URL</td><td id="full_url"></td></tr>
+    <tr><td>Age</td><td id="age"></td></tr>
+  </table>
+
+  <button onclick="window.open('dit_21128_1802_assignment_2(Haidashevska,Maryna).html');">Go back to the form</button>
+  <button onclick="deleteCookies();">Delete Cookies</button>
+ 
+
+
+ 
+</div>
+    <noscript>
+      This page requires javascript. Please enable it
+    </noscript>
+  </body>
+
+</html>

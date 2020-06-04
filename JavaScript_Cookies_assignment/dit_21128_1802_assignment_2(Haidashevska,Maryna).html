@@ -1,0 +1,340 @@
+<!doctype html>
+
+<html lang="en"> 
+  <head>
+    <meta charset="utf-8" />
+    <title>Assignment 2</title>
+    <script src="cookie_functions.js"></script>
+
+    
+    
+    <style>
+    /*CSS styles embeded */
+    body{
+      font-size: 16px;
+      font-family: Arial, sans-serif; 
+      background-color: #fff;
+      color: #000;
+      margin-left: 10px;
+    }
+    h1,h2{
+      margin-left: 17px;
+    }
+    #title{
+      width: 550px;
+      background-color: #69f;
+      border: 2px solid #00f;
+    }
+    #main_form{
+      width: 550px;
+      background-color: #9cf;
+      border: 2px solid #00f;
+    }
+   
+    p.para_required{
+      font-size: 14px;
+      font-style: italic;
+      color: #f00;
+      margin-left: 17px;
+    }
+  
+    /* Styling with CSS form fields */  
+    label.required:before {
+      content: "*";
+      color: #f00;
+    }
+    label{
+      margin-left: 17px;
+      width: 200px;
+      display: block;
+      float: left;
+      padding-top: 3px;
+      color: #00c;
+    }
+    input{
+      border: 1px solid #00c;
+      border-radius: 17px;
+      color: #999;
+      padding-left: 10px;
+      font-size: 16px;
+      padding-top: 2px;
+      padding-bottom: 2px;
+      font-style: italic;
+      box-shadow: 0px 3px #33f;
+    }
+    input[type="text"],
+    input[type="email"],
+    input[type="url"]{
+      width: 250px;
+      padding-left: 10px;
+      font-size: 18px;
+      padding-top: 2px;
+      padding-bottom: 2px;
+      font-style: italic;
+    }
+    button{
+      margin-left: 17px;
+      width: 250px;
+      height: 35px;
+      padding-left: 10px;
+      font-size: 18px;
+      padding-top: 2px;
+      padding-bottom: 2px;
+      border-radius: 10px;
+      color: #00f;
+      margin-top: 7px;
+      margin-bottom: 20px;
+      display: inline-block;
+      box-shadow: 0px 3px #33f;
+    }
+    button:hover{
+      background-color: #f00;
+      color: #fff;
+      opacity: 0.65;
+    }
+  
+    </style>
+
+    <script>
+
+
+      // Function attached to window.onload event
+      window.onload = function(){
+
+      //focus on form's first field
+      document.assignment.first_name.focus();
+   
+      /*---------------------------------------------Functions---------------------------------------- */
+
+      // functions for set up a date
+     
+    
+      /**
+     * Function to get day string from day num
+     * @param  Int num day number
+     * @return String day string
+     */
+      function getDay(num){
+        var days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+        return days[num];
+      }
+
+     /**
+     * Function to get month string from month num
+     * @param  Int num month number
+     * @return String month string
+     */
+      
+      function getMonth(num){
+        var months = ['January', 'February', 'March', 'April', 'May', 'June',
+                      'July', 'August', 'September', 'October', 'November', 'December'];
+        return months[num];
+      }
+      
+      // defyne a new variable for the Date
+      var d = new Date();
+      
+      // returns number of the full year
+      var full_year = d.getFullYear();
+
+      // returns number of the month
+      var month = d.getMonth();
+      var word_month = getMonth(month);
+      
+      // returns number of the day
+      var day = d.getDay(); 
+      var word_day = getDay(day); 
+      
+      // returns number of the day of the month
+      var date = d.getDate(); 
+
+      // returns hours 
+      var hour = d.getHours();
+      
+      var word_hour = (hour > 12) ? hour - 12 : hour;
+
+      // var text_suffix = (hour > = 12) ? 'PM' : 'AM';
+      var text_suffix = (hour >= 12) ? 'PM' : 'AM';
+
+      var minute = d.getMinutes(); // minute in the current hour
+      
+      // statemnet for minutes
+      // if less than 10, it shows 0+minutes;
+      // else shows minutes from 11 to 59 
+      
+      if(minute < 10) {
+        two_minutes = '0' + minute;
+      } else {
+        two_minutes = minute;
+      }
+      
+      
+     
+      // returns number of the seconds
+      var seconds = d.getSeconds();
+
+       // statemnet for seconds
+      // if less than 10, it shows 0+seconds;
+      // else shows seconds from 11 to 59 
+      if(seconds < 10) {
+        two_seconds = '0' + seconds;
+      } else {
+        two_seconds = seconds;
+      }
+       
+      // full_date we concantenate
+      var full_date = word_day + ', ' + date + ' ' + word_month + ' ' + full_year +
+            ', ' + word_hour + ':' + two_minutes + ':' + two_seconds + ' ' + text_suffix; 
+      
+      // change text for id="date" 
+      document.getElementById('date').innerHTML = full_date;
+      
+      
+      }
+
+      // function to check required fields and another fields individually
+
+
+      function checkRequired(){
+
+        var my_form = document.getElementById("assignment").value; // assigning variable for form
+        var f_name = document.getElementById("first_name").value; // assigning variable for first name
+        var l_name = document.getElementById("last_name").value; //assigning variable for last name
+        var t_number = document.getElementById("tel_number").value; // assigning variable for telephone number
+        var e_email = document.getElementById("email_address").value; // assigning variable for email address
+        var p_code = document.getElementById("postal_code").value; // assigning variable for postal code
+        var a_age = document.getElementById("age").value; // assigning variable for age 
+        var f_url = document.getElementById("full_url").value; // assigning variable for url
+
+        // checks if all required fields fill out
+        if((f_name == "") || (l_name == "") || (t_number == "") || (e_email == "" ) || (p_code == "")){ 
+          alert("Some required fields need to be fixed"); // if one or some of fields empty, gives alert to the user
+          return false;
+
+          // checks if "@" symbol is not found == -1; 
+          // checks if "@" symbol found on first position charAt(0), second (1) or last position (length-1)
+        } else if ((e_email.indexOf("@") == -1) ||(e_email.charAt(0) == '@') || (e_email.charAt(1) == '@') || (e_email.charAt(e_email.length-1) == '@')){ 
+          // gives an alert to the user to change email
+            alert("Ooops, please try to enter your email address more careful. Thanks");
+            return false;
+
+          // checks if "." character is not found == -1; 
+          // checks if "@" symbol found on first position charAt(0), second (1) or last position (length-1)
+          // and gives alert to the user
+          } else if ((e_email.indexOf(".") == -1) ||(e_email.charAt(0) == '.' ) || (e_email.charAt(1) == '.') || (e_email.charAt(e_email.length-1) == '.')){
+              alert("Ooops, please try to enter your email address more careful. Thanks");
+              return false;
+
+            // checks if no "-" in telephone number found
+            // or if they are not in 3 or 7 position (123-123-4567) starts from 0, first hifen - position 3, secondd one - position 7
+            // and checks if number field contain less then 12 numbers
+            // and gives alert to the user
+            }  else if ((t_number.indexOf("-") == -1) || (t_number.charAt(3) !== '-') || (t_number.charAt(7) !== '-') || (t_number.length < 12)){
+                 alert("Please enter your telephone number one more time");
+                 return false;
+
+                 // checks if postal code has an empty spaces or less than 6 characters and gives alert to the user
+               } else if ((p_code.indexOf(" ") !== -1) || (p_code.length < 6)){
+                   alert("Plese re-type your postal code, it has errors or empty spaces");
+                   return false;
+
+                  //checks is age is not a number and gives alert to the user
+               } else if (isNaN(a_age)){
+                   alert("Sorry, it looks like something wrong with your age, please enter your age or leave it blank");
+                   return false;
+                   
+               // checks if function doesnt work
+               // gives an alert to the user
+               } else if (!validUrl(f_url)){
+                 alert("Sorry, please re-type your url in format http://. Thanks");
+                 return false;
+               } // allow to submit form conditions are true
+               else
+                    alert("Congratulations! You have filled in all the form fields");
+
+                    // set maxage 2 years for our cookies 
+                    var maxage = 60 * 60 * 24 * 365 * 2;
+                    
+                    // Set cookies with cookies name, value and maxage
+
+                     setCookie('first_name', f_name, maxage);
+                     setCookie('last_name', l_name, maxage);
+                     setCookie('tel_number', t_number, maxage);
+                     setCookie('email_address', e_email, maxage);
+                     setCookie('post_code', p_code, maxage);
+                     setCookie('full_url', f_url, maxage);
+                     setCookie('age', a_age, maxage);
+
+                  return true;
+
+      }
+      
+      function validUrl(){
+        var f_url = document.getElementById("full_url").value; // assigning variable for url
+        // Looking a substring "http://"
+        var valid_url = f_url.indexOf('http://');
+        // if it was found on "0" position or we still allow user not to input url it returns True
+        if ((valid_url >= 0) || (f_url == "")){
+           return true;
+        } 
+      }
+        
+    </script>
+    
+  </head> 
+ 
+  
+  <body>
+  <div id="title">
+  <h1>Form</h1>
+  <h2 id="date">Local date and time</h2>
+  </div>
+  <div id="main_form">
+  <form id="assignment" 
+        name="assignment" 
+        action="http://www.scott-media.com/test/form_display.php" 
+        method="post"
+        onsubmit="return checkRequired(this);"
+        target="#" 
+        novalidate>
+  
+  <p class="para_required">Fields with * are required</p>
+  <p><label class="required" for="first_name">First Name</label>
+  <input type="text" name="first_name" id="first_name" placeholder="First Name" required/></p>
+  
+  <p>
+  <label class="required" for="last_name">Last Name</label>
+  <input type="text" name="last_name" id="last_name" placeholder="Last Name" required/></p>
+
+  <p>
+  <label class="required" for="tel_number">Tel.Number</label>
+  <input type="text" name="tel_number" id="tel_number" placeholder="eg.123-345-6789" minlength="12" maxlength="12" required/></p>
+  
+  <p>
+  <label class="required" for="email_address">Email</label>
+  <input  type="email" name="email_address" id="email_address" placeholder="example@email.com" required/></p>
+
+  <p>
+  <label class="required" for="postal_code">Postal Code</label>
+  <input type="text" name="postal_code" id="postal_code" minlength="6" maxlength="6" placeholder="XXXXXX" required /></p>
+
+  <p>
+  <label for="full_url">Full URL</label>
+  <input type="url" name="full_url" id="full_url" /></p>
+
+  <p>
+  <label for="age">Age</label>
+  <input type="text" name="age" id="age" /></p>
+
+  <button type="button" value="Send Form" onclick="checkRequired(this.form);">Submit and update cookies</button>
+   <button onclick="window.open('page_2.html', '_self');">View the cookies</button>
+
+
+  </form>
+</div>
+    <noscript>
+      This page requires javascript. Please enable it
+    </noscript>
+  </body>
+
+</html>
