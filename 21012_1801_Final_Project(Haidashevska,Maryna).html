@@ -1,0 +1,355 @@
+<!doctype html>
+
+<html lang="en"> 
+<!-- 
+//////////////////////////////////
+//    WDD4 - 2018               //
+//    Advanced HTML5/CSS        //
+//    Student ID: 3107483       //
+//    Maryna Haidashevska       //
+//    Instructor: Brent Scott   //             
+//    Date: November 24, 2018   //
+//                              //
+//////////////////////////////////
+-->
+  <head>
+    <title>Assignment 2</title>
+    <meta charset="utf-8" />
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,400i,700i" rel="stylesheet">
+    
+    <!-- Conditional comments for IE browsers -->
+    <!--[if LTE IE 8]>
+       <p>Hello, looks like you're using an old IE browser. Time to see what 
+       features you can get with newer browsers and finally watch video 
+       about our lovely city</p>
+    <![endif]-->
+    
+    <style>
+    /*CSS styles embeded */
+    body{
+      font-size: 16px;
+      font-family: Montserrat, Arial, sans-serif;
+      background-color: #fff;
+      margin-top: 0;
+    }
+    h1{
+      color: #333;
+      text-shadow: 0px 3px 8px rgba(0,0,0,0.7);
+    }
+    #wrapper{
+      width: 960px;
+      position: relative;
+      margin: 0 auto; 
+      background: -ws-linear-gradient(to right, #e4f5fc 0%,#bfe8f9 34%,#9fd8ef 74%,#2ab0ed 100%);
+      background: -webkit-linear-gradient(135deg, #e4f5fc 0%,#bfe8f9 25%,#9fd8ef 55%,#2ab0ed 100%,#9fd8ef 100%);
+      background: -moz-linear-gradient(135deg, #e4f5fc 0%,#bfe8f9 25%,#9fd8ef 55%,#2ab0ed 100%,#9fd8ef 100%);
+      background: linear-gradient(135deg, #e4f5fc 0%,#bfe8f9 25%,#9fd8ef 55%,#2ab0ed 100%,#9fd8ef 100%);
+      
+    }
+    main{
+        display: block;
+      }
+    /*CSS for header */
+    header{
+      width: 960px;
+      height: 100px;
+      background: -moz-linear-gradient(to right, #e4f5fc 0%,#bfe8f9 34%,#9fd8ef 74%,#2ab0ed 100%);
+      background: -ms-linear-gradient(to right, #e4f5fc 0%,#bfe8f9 34%,#9fd8ef 74%,#2ab0ed 100%);
+      background: -webkit-linear-gradient(to right, #e4f5fc 0%,#bfe8f9 34%,#9fd8ef 74%,#2ab0ed 100%); 
+      background: linear-gradient(to right, #e4f5fc 0%,#bfe8f9 34%,#9fd8ef 74%,#2ab0ed 100%);  
+      opacity: 0.6;
+      position: relative;
+    }
+    /*-- Main logo and services tagline styling */
+    header #main_logo{
+      background-image: url('main_logo.png');
+      background-repeat: no-repeat;
+      width: 283px;
+      height: 80px;
+      float: left;
+      position: absolute;
+      top: 5px;
+      left: 5px;
+      z-index: 5;
+    }
+    header #service{
+      background-image: url('services.png');
+      background-repeat: no-repeat;
+      width: 578px;
+      height: 80px;
+      float: left;
+      position: absolute;
+      left: 283px;
+      top: 5px;
+      z-index:5;
+    }
+    /*CSS for site navigation*/ 
+    nav{
+      height: 80px;
+      background-color: #cff;
+      background: -moz-linear-gradient(to right, #e4f5fc 0%,#bfe8f9 34%,#9fd8ef 74%,#2ab0ed 100%); 
+      background: -ms-linear-gradient(to right, #e4f5fc 0%,#bfe8f9 34%,#9fd8ef 74%,#2ab0ed 100%); 
+      background: -webkit-linear-gradient(to right, #e4f5fc 0%,#bfe8f9 34%,#9fd8ef 74%,#2ab0ed 100%); 
+      background: linear-gradient(to right, #e4f5fc 0%,#bfe8f9 34%,#9fd8ef 74%,#2ab0ed 100%);  
+      text-align: center;
+      margin: 0;
+      box-shadow: 0px 3px 8px rgba(0,0,0,0.7);
+      position: relative;
+     
+    }
+    /*CSS for site navigation list*/
+    nav ul{
+      margin: 0;
+      padding: 0;
+      position: absolute;
+      right: 30px;
+      text-decoration: none;
+      color: #fff;
+    }
+    nav ul li{
+      display: inline-block;
+      list-style-type: none;
+      float: left;
+      margin: 8px;
+      padding-right: 3px;
+    }
+    nav ul li a{
+      font-size: 20px;
+      padding: 15px 18px 15px 20px;
+      border-radius: 20px;
+      display: block;
+      background-color: #cff;
+      text-decoration: none;
+      color: #000;
+    }
+    /*CSS for main content*/
+    main{
+      display: block;
+      padding: 1px 45px 1px 45px;
+      min-height: 400px;
+      line-height: 1.5em;
+      color: #00c;
+      font-size: 18px;
+  
+    }
+    /*CSS for form */
+    fieldset{
+      margin-bottom: 20px;
+      border: 2px solid #9cf;
+      margin-top: 5px;
+      padding: 7px;
+    }
+    fieldset h2{
+      color: #009;
+    }
+    main label{
+      width: 200px;
+      display: block;
+      float: left;
+      padding-top: 3px;
+      color: #00c;
+    }
+    /* CSS for styling forms with text areas and graphs */
+    main input{
+      width: 250px;
+      background-color: #fff;
+      border: 1px solid #999;
+      border-radius: 7px;
+      color: #00c;
+      padding-left: 10px;
+      font-size: 18px;
+      padding-top: 2px;
+      padding-bottom: 2px;
+      font-style: italic;
+    }
+    input+label{
+      display: inline;
+      float: none;
+      width: auto;
+      background-color: #fff;
+      color: #00c;
+    }
+    /* Styling with CSS text, date and emails fields */
+    input[type="text"],
+    input[type="date"],
+    input[type="number"],
+    input[type="url"]{
+      width: 250px;
+      padding-left: 10px;
+      font-size: 18px;
+      padding-top: 2px;
+      padding-bottom: 2px;
+      font-style: italic;
+    }
+    /* CSS for submit and reset buttons */
+    input[type="submit"],
+    input[type="reset"]{
+      width: 120px;
+      padding-left: 10px;
+      font-size: 18px;
+      padding-top: 2px;
+      padding-bottom: 2px;
+    }
+    /*CSS for image*/
+    #services_hand{
+      width: 207px;
+      height: 138px;
+      background-image: url('services_hand.jpg');
+      background-repeat: no-repeat;
+      position: absolute;
+      top: 362px;
+      left: 520px;
+      z-index: 1000;
+      /*CSS for image animation*/
+      -ms-animation:slide-fwd-tr .45s cubic-bezier(.25,.46,.45,.94) both;
+      -webkit-animation:slide-fwd-tr .45s cubic-bezier(.25,.46,.45,.94) both;
+      -moz-animation:slide-fwd-tr .45s cubic-bezier(.25,.46,.45,.94) both
+      animation:slide-fwd-tr .45s cubic-bezier(.25,.46,.45,.94) both}
+      
+
+    /*CSS for making animation moves*/
+    @-webkit-keyframes slide-fwd-tr{
+      0%{-webkit-transform:translateZ(0) translateY(0) translateX(0);
+             -ms-transform:translateZ(0) translateY(0) translateX(0);
+                 transform:translateZ(0) translateY(0) translateX(0)}
+      100%{-webkit-transform:translateZ(160px) translateY(-100px) translateX(100px);
+               -ms-transform:translateZ(160px) translateY(-100px) translateX(100px);
+                   transform:translateZ(160px) translateY(-100px) translateX(100px)
+      }
+    }@keyframes slide-fwd-tr{
+      0%{-webkit-transform:translateZ(0) translateY(0) translateX(0);
+             -ms-transform:translateZ(0) translateY(0) translateX(0);
+                 transform:translateZ(0) translateY(0) translateX(0)}
+      100%{-webkit-transform:translateZ(160px) translateY(-100px) translateX(100px);
+               -ms-transform:translateZ(160px) translateY(-100px) translateX(100px);
+                   transform:translateZ(160px) translateY(-100px) translateX(100px)
+      }
+    }
+    /*CSS for footer area*/
+    footer{
+      height: 50px;
+      background: -moz-linear-gradient(#cff, #6cf);
+      background: -webkit-linear-gradient(#cff, #6cf);
+      background: -ms-linear-gradient(#cff, #6cf);
+      background: linear-gradient(#cff, #6cf);
+      background-color: #cff;
+      box-shadow: 0px 3px 8px rgba(0,0,0,0.75);
+    }
+    /*CSS for copyright*/
+    footer div#copyright{
+      color: #333;
+      font-size: 14px;
+      text-align: center;
+      margin-top: 5px;
+      padding: 10px;
+    } 
+    
+    </style>
+    <!-- Java for using it in older version of IE-->
+    <script src="old_ie.js"></script>
+    
+  </head> 
+ 
+  
+  <body>
+  <h1>Assignment 2</h1>
+  
+    <div id="wrapper">
+      <header><!--Main logo and services tagline -->
+        <div id="main_logo"></div>
+        <div id="service"></div> 
+      </header>
+
+      <nav> <!-- Navigation menu -->
+        <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Products</a></li>
+        <li><a href="#">Gallery</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </nav>
+    
+    <main><!--Main page -->
+    <form method="post"
+          action="http://www.scott-media.com/test/form_display.php"
+          autocomplete="on">
+      <fieldset><!-- Strarting form in a frame/fieldset -->
+        <h2>Contact with us</h2>
+        
+        <p><!-- Field with First name info -->
+          <label for="first_name">First Name</label>
+          <input type="text" 
+                 name="first_name" 
+                 id="first_name" 
+                 placeholder="Type your first name" 
+                 required="required" />
+        </p>
+        
+        <p><!-- Field with Last name info -->
+        <label for="last_name">Last Name</label>
+          <input type="text" 
+                 name="last_name" 
+                 id="last_name" 
+                 placeholder="Type your last name" 
+                 required="required" />
+        </p>
+        
+        <p><!-- Field with Email address info -->
+          <label for="email">Email address</label>
+          <input type="text" name="email" id="email">
+        </p>
+        
+         <p><!-- Field with Lucky number info -->
+          <label for="lucknum">Your lucky number</label>
+          <input type="number" id="lucknum" name="lucknum" />
+        </p>
+        
+        <p><!-- Field with URL info -->
+          <label for="useurl">Name useful URL</label>
+          <input type="url" id="useurl" name="useurl" />
+        </p>
+        
+        <p><!-- Field list of services -->
+          <label>Services you need</label>
+          <input list="services" name="services" />
+          <datalist id="services">
+            <option value="Oil changing"></option>
+            <option value="Tire replacement"></option>
+            <option value="Inspection"></option>
+            <option value="Car polishing"></option>
+            <option value="Body work"></option>
+          </datalist>
+          
+        </p>
+        <p><!-- Field with Birthday info -->
+          <label for="birthday">Choose your birthday: (yyyy-mm-dd)</label>
+          <input type="date" name="birthday" id="birthday" />
+        </p>
+        
+        <!-- Some space for image -->
+        <div id="services_hand"></div>
+      </fieldset>
+      
+        <p> <!-- Submit and reset button -->
+            <input value="Send Form" type="submit" />
+            <input value="Clear Form" type="reset" />
+        </p>
+    </form> 
+    
+    <p>Please find time to watch video about our lovely city Winnipeg</p>
+    <!-- Video embedded -->
+    <video controls width="640" height="360" >
+      <source src="our_winnipeg.mp4" type="video/mp4" />
+      <source src="our_winnipeg.webm" type="video/webm" />
+    </video>
+      
+    </main>
+    <footer>
+    <!-- Copyright info -->
+      <div id="copyright">Copyright &copy; 2018 - MBS Services</div>
+    </footer>
+    </div>
+  </body>
+
+</html>
